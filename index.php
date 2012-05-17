@@ -215,10 +215,11 @@ if (isset($_GET['LocIDs'])) {
 
                     find_stops.show();
                     find_stops.find('a:first').click(function(e) {
+                        // Show loading indicator
+                        loading.show();
+
                         // Get the user's location
                         navigator.geolocation.getCurrentPosition(function(pos) {
-                            // Show loading indicator
-                            loading.show();
 
                             // Make our request
                             $.post('/ajax/stops.php',
@@ -242,6 +243,8 @@ if (isset($_GET['LocIDs'])) {
                                     loading.hide();
                                 }
                             );
+                        }, function(e) {
+                            loading.hide();
                         });
                         return false;
                     });
