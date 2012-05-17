@@ -140,7 +140,7 @@ if (isset($_GET['LocIDs'])) {
             #find-stops a:active {
                 display: block;
                 margin: 0;
-                padding: 15px 0;
+                padding: 15px 10px;
                 color: #fff;
                 text-decoration: none;
             }
