@@ -293,8 +293,8 @@ if (isset($_GET['LocIDs'])) {
             </div>
             <?php endif; ?>
             <div id="footer">
-                <a href="https://github.com/twaddington/trimet-stop-lookup">Source Code</a> |
-                <a href="mailto:consulting@tristanwaddington.com">Feedback? Results not accurate?</a>
+                <a href="https://github.com/twaddington/trimet-stop-lookup">View Source</a> |
+                <a href="mailto:consulting@tristanwaddington.com?subject=Where's My Bus Feedback">Send Feedback</a>
             </div>
         </div>
         <!-- end .wrap -->
