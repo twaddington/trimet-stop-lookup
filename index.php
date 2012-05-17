@@ -235,7 +235,7 @@ if (isset($_GET['LocIDs'])) {
                                         });
                                         stop_list.show();
                                     } else {
-                                        find_stops.find('a').text('No stops found! Check again?');
+                                        find_stops.find('a').text('No stops found! Try again?');
                                     }
 
                                     // Hide the loading indicator
