@@ -75,10 +75,7 @@ if (isset($_GET['LocIDs'])) {
                 padding: 5px 10px;
                 color: #fff;
                 border: none;
-                border-radius: 5px;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                background-color: #084C8D; 
+                background-color: #084C8D;
             }
             fieldset ol,
             fieldset li {
@@ -101,30 +98,28 @@ if (isset($_GET['LocIDs'])) {
                 padding: 0px;
             }
             input[type="text"] {
-                width: 64%;
-                margin-left: 5px;
-                padding: 5px 0px;
+                width: 200px;
+                margin: 0;
+                padding: 10px;
                 color: #999;
-                font-size: 28px;
+                font-size: 24px;
                 border: none;
                 outline: none;
             }
             input[type="submit"] {
-                width: 80px;
-                margin: 5px;
-                padding: 4px 0px;
-                color: #fff;
-                font-size: 18px;
-                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-                border: 1px solid #2E2D2A;
-                border-radius: 5px;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                background: #0C457A;
-                background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#222));
-                background: -moz-linear-gradient(top, #555, #222);
-                float: right;
+                position: relative;
+                top: 5px;
+                right: 5px;
+                width: 100px;
+                margin: 0;
+                padding: 8px 0px;
+                color: #084C8D;
+                font-size: 16px;
+                text-transform: uppercase;
+                border: none;
+                background: #DADFE1;
                 cursor: pointer;
+                float: right;
             }
             #find-stops {
                 display: none;
@@ -271,7 +266,7 @@ if (isset($_GET['LocIDs'])) {
                     <ol>
                         <li>
                             <label for=""></label>
-                            <input type="text" name="LocIDs" placeholder="Enter your stop number..." value="<?php echo $stop_ids; ?>" />
+                            <input type="text" name="LocIDs" placeholder="Stop number..." value="<?php echo $stop_ids; ?>" />
                             <input type="submit" value="Submit" />
                         </li>
                     </ol>
