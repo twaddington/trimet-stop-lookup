@@ -84,6 +84,7 @@ if (isset($_GET['LocIDs'])) {
                 list-style-type: none;
             }
             fieldset li {
+                position: relative;
                 margin: 5px 0px;
                 background-color: #fff;
                 overflow: hidden;
@@ -94,17 +95,20 @@ if (isset($_GET['LocIDs'])) {
                 font-size: 12px;
             }
             input {
+                position: relative;
                 margin: 0px;
                 padding: 0px;
             }
             input[type="text"] {
-                width: 60%;
+                position: absolute;
+                width: 100%;
                 margin: 0;
                 padding: 10px;
                 color: #999;
                 font-size: 20px;
                 border: none;
                 outline: none;
+                z-index: 1;
             }
             input[type="submit"] {
                 display: block;
@@ -117,6 +121,7 @@ if (isset($_GET['LocIDs'])) {
                 border: none;
                 background: #DADFE1;
                 cursor: pointer;
+                z-index: 2;
                 float: right;
             }
             #find-stops {
