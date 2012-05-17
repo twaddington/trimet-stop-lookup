@@ -17,7 +17,7 @@ if (isset($_GET['LocIDs'])) {
         $arrivals = $api->getArrivals($LocIDs);
     }
     else {
-        $error_msg = 'The stop ID you entered was not valid. Please try again.';
+        $error_msg = 'Invalid stop! Try a numeric stop ID like "1448".';
     }
 }
 
@@ -151,6 +151,12 @@ if (isset($_GET['LocIDs'])) {
                 background: transparent url('images/spinner.gif') no-repeat center;
                 float: left;
             }
+            #debug {
+                position: absolute;
+                top: 13px;
+                left: 0;
+                font-size: 10px;
+            }
             #results {
                 margin: 20px 10px;
                 padding: 0px;
@@ -182,8 +188,9 @@ if (isset($_GET['LocIDs'])) {
                 background-color: #DADFE1;
             }
             #footer {
+                position: relative;
                 margin: 20px 0px;
-                padding: 10px;
+                padding: 10px 0;
                 color: #999;
                 text-align: right;
                 border-top: 1px solid #A9A9A9;
@@ -218,6 +225,11 @@ if (isset($_GET['LocIDs'])) {
 
                         // Get the user's location
                         navigator.geolocation.getCurrentPosition(function(pos) {
+                            // Debug
+                            $('#debug').text(
+                                pos.coords.latitude + ',' +
+                                pos.coords.longitude + ',' +
+                                pos.coords.accuracy);
 
                             // Make our request
                             $.post('/ajax/stops.php',
@@ -291,6 +303,7 @@ if (isset($_GET['LocIDs'])) {
             </div>
             <?php endif; ?>
             <div id="footer">
+                <span id="debug"></span>
                 <a href="https://github.com/twaddington/trimet-stop-lookup">View Source</a> |
                 <a href="mailto:consulting@tristanwaddington.com?subject=Where's My Bus Feedback">Send Feedback</a>
             </div>
