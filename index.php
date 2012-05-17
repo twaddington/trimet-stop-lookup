@@ -131,13 +131,16 @@ if (isset($_GET['LocIDs'])) {
                 text-align: right;
                 background-color: #084C8D;
             }
+            #find-stops .wrap {
+                padding: 0;
+            }
             #find-stops a:link,
             #find-stops a:visited,
             #find-stops a:hover,
             #find-stops a:active {
                 display: block;
                 margin: 0;
-                padding: 0;
+                padding: 15px 0;
                 color: #fff;
                 text-decoration: none;
             }
@@ -172,7 +175,6 @@ if (isset($_GET['LocIDs'])) {
             #stop-list li a:link,
             #stop-list li a:visited {
                 display: block;
-                width: 45%;
                 margin: 5px;
                 padding: 15px 10px;
                 color: #084C8D;
@@ -180,7 +182,6 @@ if (isset($_GET['LocIDs'])) {
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 background-color: #DADFE1;
-                float: left;
             }
             #footer {
                 margin: 20px 0px;
@@ -233,6 +234,8 @@ if (isset($_GET['LocIDs'])) {
                                             stop_list.find('ul:first').append(item);
                                         });
                                         stop_list.show();
+                                    } else {
+                                        find_stops.find('a').text('No stops found! Check again?');
                                     }
 
                                     // Hide the loading indicator
