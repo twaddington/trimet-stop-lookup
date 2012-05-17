@@ -105,7 +105,7 @@ if (isset($_GET['LocIDs'])) {
                 margin: 0;
                 padding: 10px;
                 color: #999;
-                font-size: 20px;
+                font-size: 24px;
                 border: none;
                 outline: none;
                 z-index: 1;
