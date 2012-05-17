@@ -98,11 +98,11 @@ if (isset($_GET['LocIDs'])) {
                 padding: 0px;
             }
             input[type="text"] {
-                width: 200px;
+                width: 60%;
                 margin: 0;
                 padding: 10px;
                 color: #999;
-                font-size: 24px;
+                font-size: 20px;
                 border: none;
                 outline: none;
             }
