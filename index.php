@@ -255,6 +255,11 @@ if (isset($_GET['LocIDs'])) {
                             );
                         }, function(e) {
                             loading.hide();
+                        },
+                        {
+                            enableHighAccuracy: true,
+                            timeout: 10000,
+                            maximumAge: 30000
                         });
                         return false;
                     });
