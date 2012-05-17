@@ -223,7 +223,7 @@ if (isset($_GET['LocIDs'])) {
                             $.post('/ajax/stops.php',
                                 {'lat': pos.coords.latitude, 'lng': pos.coords.longitude, 'radius': 50},
                                 function(data) {
-                                    if (data.length > 0) {
+                                    if (data && data.length > 0) {
                                         $.each(data, function(k,l) {
                                             var a = $('<a/>', {
                                                 'href': '/?LocIDs=' + l.locid
@@ -239,8 +239,8 @@ if (isset($_GET['LocIDs'])) {
                                     loading.hide();
                                 }
                             );
-                            return false;
                         });
+                        return false;
                     });
                 }
             });
