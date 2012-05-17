@@ -1,0 +1,3 @@
+[submodule "libs/phpMet"]
+	path = libs/phpMet
+	url = git@github.com:twaddington/phpMet.git
