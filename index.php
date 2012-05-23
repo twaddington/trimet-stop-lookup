@@ -233,7 +233,7 @@ if (isset($_GET['LocIDs'])) {
 
                             // Make our request
                             $.post('/ajax/stops.php',
-                                {'lat': pos.coords.latitude, 'lng': pos.coords.longitude, 'radius': 50},
+                                {'lat': pos.coords.latitude, 'lng': pos.coords.longitude, 'radius': 75},
                                 function(data) {
                                     if (data && data.length > 0) {
                                         $.each(data, function(k,l) {
@@ -259,7 +259,7 @@ if (isset($_GET['LocIDs'])) {
                         {
                             enableHighAccuracy: true,
                             timeout: 10000,
-                            maximumAge: 30000
+                            maximumAge: 0
                         });
                         return false;
                     });
