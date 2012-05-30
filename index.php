@@ -152,18 +152,45 @@ if (isset($_GET['LocIDs'])) {
                 float: left;
             }
             #debug {
-                position: absolute;
-                top: 13px;
-                left: 0;
+                color: #999;
                 font-size: 10px;
+                text-align: center;
             }
             #results {
                 margin: 20px 10px;
                 padding: 0px;
             }
+            #results ul {
+                display: block;
+                margin: 10px 0 0 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            #results li:first-child {
+                border: none;
+            }
             #results li {
-                margin: 5px 0px;
+                display: block;
+                margin: 10px 0;
+                padding: 10px 0 0 0;
                 color: #666;
+                border-top: 1px solid #DADFE1;
+                list-style-type: none;
+            }
+            .arrival {
+                margin-bottom: 2px;
+                color: #333;
+            }
+            .arrival-line {
+
+            }
+            .arrival-time {
+                color: #084C8D;
+                font-weight: bold;
+            }
+            .arrival-location {
+                color: #A9A9A9;
+                font-size: 13px;
             }
             #stop-list {
                 display: none;
@@ -302,16 +329,23 @@ if (isset($_GET['LocIDs'])) {
                 <h2>Your bus will arrive...</h2>
                 <ul>
                     <?php foreach ($arrivals as $a) : ?>
-                        <li><?php echo $a; ?></li>
+                        <li>
+                            <div class="arrival">
+                                <span class="arrival-line"><?php echo $a->shortSign; ?></span>
+                                arriving in
+                                <span class="arrival-time"><?php echo abs($a->getArrivalTime()); ?> minutes</span>
+                            </div>
+                            <span class="arrival-location"><?php echo $a->location; ?></span>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
             <?php endif; ?>
             <div id="footer">
-                <span id="debug"></span>
                 <a href="https://github.com/twaddington/trimet-stop-lookup">View Source</a> |
                 <a href="mailto:consulting@tristanwaddington.com?subject=Where's My Bus Feedback">Send Feedback</a>
             </div>
+            <div id="debug"></div>
         </div>
         <!-- end .wrap -->
 <script type="text/javascript">
