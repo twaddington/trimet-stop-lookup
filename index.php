@@ -178,11 +178,11 @@ if (isset($_GET['LocIDs'])) {
                 list-style-type: none;
             }
             .arrival {
-                margin-bottom: 2px;
+                margin: 0 0 2px 0;
                 color: #333;
             }
             .arrival-line {
-
+                /* stub */
             }
             .arrival-time {
                 color: #084C8D;
@@ -326,7 +326,6 @@ if (isset($_GET['LocIDs'])) {
             <?php endif; ?>
             <?php if (!empty($arrivals)) : ?>
             <div id="results">
-                <h2>Your bus will arrive...</h2>
                 <ul>
                     <?php foreach ($arrivals as $a) : ?>
                         <li>
