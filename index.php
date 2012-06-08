@@ -99,7 +99,7 @@ if (isset($_GET['LocIDs'])) {
                 margin: 0px;
                 padding: 0px;
             }
-            input[type="text"] {
+            input[type="number"] {
                 position: absolute;
                 width: 100%;
                 margin: 0;
