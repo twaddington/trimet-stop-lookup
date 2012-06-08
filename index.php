@@ -264,15 +264,20 @@ if (isset($_GET['LocIDs'])) {
                                 {'lat': pos.coords.latitude, 'lng': pos.coords.longitude, 'radius': 75},
                                 function(data) {
                                     if (data && data.length > 0) {
-                                        $.each(data, function(k,l) {
-                                            var a = $('<a/>', {
-                                                'href': '/?LocIDs=' + l.locid
-                                            }).text('[' + l.locid + '] ' + l.desc + ' ' + l.dir);
+                                        if (data.length === 1) {
+                                            // Only one stop found, redirect immediately!
+                                            window.location = '?LocIDs=' + data[0].locid;
+                                        } else {
+                                            $.each(data, function(k,l) {
+                                                var a = $('<a/>', {
+                                                    'href': '/?LocIDs=' + l.locid
+                                                }).text('[' + l.locid + '] ' + l.desc + ' ' + l.dir);
 
-                                            var item = $('<li/>').append(a);
-                                            stop_list.find('ul:first').append(item);
-                                        });
-                                        stop_list.show();
+                                                var item = $('<li/>').append(a);
+                                                stop_list.find('ul:first').append(item);
+                                            });
+                                            stop_list.show();
+                                        }
                                     } else {
                                         find_stops.find('a').text('No stops found! Try again?');
                                     }
