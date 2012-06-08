@@ -314,7 +314,7 @@ if (isset($_GET['LocIDs'])) {
                     <ol>
                         <li>
                             <label for=""></label>
-                            <input type="number" name="LocIDs" placeholder="Stop number..." value="<?php echo $stop_ids; ?>" />
+                            <input type="number" name="LocIDs" placeholder="Stop number..." autofocus value="<?php echo $stop_ids; ?>" />
                             <input type="submit" value="Submit" />
                         </li>
                     </ol>
