@@ -343,9 +343,9 @@ if (isset($_GET['LocIDs'])) {
                             <div class="arrival">
                                 <span class="arrival-line"><?php echo $a->shortSign; ?></span>
                                 arriving in
-                                <span class="arrival-status"><?php echo $a->status; ?></span>
                                 <span class="arrival-time"><?php echo abs($a->getArrivalTime()); ?> minutes</span>
                             </div>
+                            <span class="arrival-status"><?php echo $a->status; ?></span>
                             <span class="arrival-location"><?php echo $a->location; ?></span>
                         </li>
                     <?php endforeach; ?>
