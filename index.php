@@ -185,14 +185,14 @@ if (isset($_GET['LocIDs'])) {
             .arrival-line {
                 /* stub */
             }
-            .arrival-status {
-                color: #084C8D;
-                font-variant: small-caps;
-                float: right;
-            }
             .arrival-time {
                 color: #084C8D;
                 font-weight: bold;
+            }
+            .arrival-status {
+                color: #A9A9A9;
+                font-variant: small-caps;
+                float: right;
             }
             .arrival-location {
                 color: #A9A9A9;
