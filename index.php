@@ -185,6 +185,11 @@ if (isset($_GET['LocIDs'])) {
             .arrival-line {
                 /* stub */
             }
+            .arrival-status {
+                color: #084C8D;
+                font-variant: small-caps;
+                float: right;
+            }
             .arrival-time {
                 color: #084C8D;
                 font-weight: bold;
@@ -338,6 +343,7 @@ if (isset($_GET['LocIDs'])) {
                             <div class="arrival">
                                 <span class="arrival-line"><?php echo $a->shortSign; ?></span>
                                 arriving in
+                                <span class="arrival-status"><?php echo $a->status; ?></span>
                                 <span class="arrival-time"><?php echo abs($a->getArrivalTime()); ?> minutes</span>
                             </div>
                             <span class="arrival-location"><?php echo $a->location; ?></span>
