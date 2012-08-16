@@ -345,7 +345,9 @@ if (isset($_GET['LocIDs'])) {
                                 arriving in
                                 <span class="arrival-time"><?php echo abs($a->getArrivalTime()); ?> minutes</span>
                             </div>
-                            <span class="arrival-status"><?php echo $a->status; ?></span>
+														<?php if ($a->status != 'estimated') : ?>
+														<span class="arrival-status"><?php echo $a->status; ?></span>
+														<?php endif; ?>
                             <span class="arrival-location"><?php echo $a->location; ?></span>
                         </li>
                     <?php endforeach; ?>
