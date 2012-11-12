@@ -342,12 +342,17 @@ if (isset($_GET['LocIDs'])) {
                         <li>
                             <div class="arrival">
                                 <span class="arrival-line"><?php echo $a->shortSign; ?></span>
-                                arriving in
-                                <span class="arrival-time"><?php echo abs($a->getArrivalTime()); ?> minutes</span>
+                                <?php if ($a->isScheduled()) : ?>
+                                    scheduled at
+                                    <span class="arrival-time"><?php echo date('g:ia', $a->scheduled->unix_datetime); ?></span>
+                                <?php else : ?>
+                                    arriving in
+                                    <span class="arrival-time"><?php echo abs($a->getArrivalTime()); ?> minutes</span>
+                                <?php endif; ?>
                             </div>
-														<?php if ($a->status != 'estimated') : ?>
-														<span class="arrival-status"><?php echo $a->status; ?></span>
-														<?php endif; ?>
+                            <?php if ($a->status != 'estimated') : ?>
+                                <span class="arrival-status"><?php echo $a->status; ?></span>
+                            <?php endif; ?>
                             <span class="arrival-location"><?php echo $a->location; ?></span>
                         </li>
                     <?php endforeach; ?>
